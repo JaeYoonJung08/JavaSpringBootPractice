@@ -18,11 +18,22 @@ public class BoardController {
         return "boardwrite";
     }
 
+//    @PostMapping("/board/writepro")
+//    public String boardWritePro(Board board)
+//    {
+//        boardService.write(board);
+//        return "redirect:/board/list";
+//    }
+
     @PostMapping("/board/writepro")
-    public String boardWritePro(Board board)
+    public String boardWritePro(Board board, Model model)
     {
         boardService.write(board);
-        return "";
+
+
+        model.addAttribute("message", "글 작성이 완료되었습니다");
+        model.addAttribute("searchUrl", "/board/list");
+        return "message";
     }
 
     @GetMapping("/board/list")
