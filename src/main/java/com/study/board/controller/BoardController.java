@@ -37,9 +37,9 @@ public class BoardController {
     }
 
 
-    @GetMapping("/board/view")
-    public String boardView(){
-
+    @GetMapping("/board/view")// localhost/board/view?id=1
+    public String boardView(@RequestParam("id") Integer id, Model model){
+        model.addAttribute("board", boardService.boardView(id));
         return "boardview";
     }
 }
