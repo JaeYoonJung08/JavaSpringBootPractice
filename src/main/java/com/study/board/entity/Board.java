@@ -18,6 +18,10 @@ public class Board {
 
     private  String content;
 
+    private String filename;
+
+    private String  filepath;
+
     public String getTitle() {
         return title;
     }
@@ -28,5 +32,12 @@ public class Board {
     }
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public void setFilename(String filename) {
+        this.filename= filename;
+    }
+    public void setFilepath(String filepath) {
+        this.filepath = filepath;
     }
 }
